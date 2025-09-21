@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "homepage": "https://github.com/honojs/middleware",
+  "homepage": "https://github.com/farhantallei/hono-route-spec",
   "author": "farhantallei",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
