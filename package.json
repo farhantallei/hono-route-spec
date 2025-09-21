@@ -1,0 +1,69 @@
+{
+  "name": "@hono/route-spec",
+  "version": "0.1.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "homepage": "https://github.com/honojs/middleware",
+  "author": "farhantallei",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@hono/standard-validator": "^0.1.5",
+    "@standard-community/standard-json": "^0.3.3",
+    "@standard-community/standard-openapi": "^0.2.4",
+    "@standard-schema/spec": "^1.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "eslint": "^9.36.0",
+    "hono": "^4.9.8",
+    "hono-openapi": "^1.0.8",
+    "openapi-types": "^12.1.3",
+    "prettier": "^3.6.2",
+    "publint": "^0.3.13",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^3.2.4",
+    "zod": "^4.1.11"
+  },
+  "peerDependencies": {
+    "hono": "^4.9.0",
+    "hono-openapi": ">=1.0.8"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./types": {
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "description": "Schema-driven route helpers for Hono with OpenAPI metadata and runtime validation.",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "format": "prettier --write \"src/**/*.{ts,js}\" README.md",
+    "lint": "eslint . --ext ts,js",
+    "publint": "publint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepare": "bun run build",
+    "prepublishOnly": "bun run build"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts"
+}
